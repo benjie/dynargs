@@ -1,0 +1,9 @@
+{
+  "name": "dynargs",
+  "version": "0.1.0",
+  "author": "Benjie Gillam <code@benjiegillam.com>",
+  "description": "Dynamic function arguments parser.",
+  "main": "./dynargs.js",
+  "license": "MIT",
+  "dependencies": {}
+}
