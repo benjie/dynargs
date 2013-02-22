@@ -58,6 +58,10 @@ function parse(args, spec) {
       result[name] = next;
       next = args.shift();
     } else if (validator.isOptional) {
+      if (typeof next === 'undefined') {
+        // Soak up the undefined placeholder for this optional argument
+        next = args.shift();
+      }
       // Do nothing
     } else {
       throw new Error("Invalid value for '"+name+"': '"+next+"'");
