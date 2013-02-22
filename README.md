@@ -102,6 +102,7 @@ Built in validators
  * boolean
  * array
  * object
+ * buffer - a Node.JS buffer (requires Node.JS...)
  * fn - function
  * arrayOf(type)
  * oneOf(type, type, ...)

@@ -14,6 +14,9 @@ var type =
   , object: function isObject(val) {
       return val && typeof val === 'object';
     }
+  , buffer: function isBuffer(val) {
+      return Buffer.isBuffer(val);
+    }
   , fn: function isFunction(val) {
       return typeof val === 'function';
     }
