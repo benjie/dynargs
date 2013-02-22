@@ -29,6 +29,17 @@ var type =
         return true;
       };
     }
+  , objectOf: function isObjectOf(isType) {
+      return function isObjectOfType(val) {
+        if (!type.object(val)) return false;
+        for (var k in val) {
+          if (val.hasOwnProperty(k)) {
+            if (!isType(val[k])) return false;
+          }
+        }
+        return true;
+      };
+    }
   , oneOf: function isOneOf() {
       var isTypes = Array.prototype.slice.call(arguments);
       return function isOneOfTypes(val) {

@@ -105,6 +105,7 @@ Built in validators
  * buffer - a Node.JS buffer (requires Node.JS...)
  * fn - function
  * arrayOf(type)
+ * objectOf(type)
  * oneOf(type, type, ...)
 
 ### arrayOf
@@ -114,6 +115,10 @@ Argument is a validator that all entries in the array must conform to.
 ```
 var arrayOfStrings = dynargs.type.arrayOf(dynargs.type.string);
 ```
+
+### objectOf
+
+Argument is a validator that all values in the object must conform to.
 
 ### oneOf
 
