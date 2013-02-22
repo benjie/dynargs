@@ -8,6 +8,12 @@ arguments where some are optional and others can take different types of
 value (string, array, number, etc.). This module helps to write and
 process these argument lists in a consistent way.
 
+Stability
+---------
+
+**Unstable**: I'm still experimenting with the syntax - suggestions
+welcome!
+
 Example
 -------
 
@@ -48,13 +54,13 @@ and it isn't optional then we throw a `new Error`.
 
 This is a simple list of 2-tuples (pairs) where the first value is the
 name for the argument and the second is a function used to validate it.
-Optional arguments' functions expose `fn.isOptional == true`. You can
-create an optional version of a validator by passing it to
-`dynargs.type.optional()`.
+Functions for arguments that are optional must expose `fn.isOptional ==
+true`. You can create an optional version of any validator by passing it
+to `dynargs.type.optional()`.
 
-NOTE: this would be a lot prettier as just a JavaScript object, but
-unfortunately JavaScript objects are not guaranteed to be ordered, so
-we cannot rely on this.
+NOTE: argSpecs could be a lot prettier if JavaScript objects were
+ordered, but alas we cannot rely on this so we must use arrays to
+maintain order.
 
 Exceptions
 ----------
@@ -101,11 +107,17 @@ Built in validators
 
 ### arrayOf
 
+Argument is a validator that all entries in the array must conform to.
+
 ```
 var arrayOfStrings = dynargs.type.arrayOf(dynargs.type.string);
 ```
 
 ### oneOf
+
+Argument must take one of the types given (optional types passed to
+oneOf are treated as if they are non-optional; though `oneOf` itself
+can be optional).
 
 ```
 var T = dynargs.type;
