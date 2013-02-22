@@ -101,7 +101,8 @@ Built in validators
  * number
  * boolean
  * array
- * fn
+ * object
+ * fn - function
  * arrayOf(type)
  * oneOf(type, type, ...)
 

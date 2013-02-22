@@ -11,6 +11,9 @@ var type =
   , array: function isArray(val) {
       return Array.isArray(val);
     }
+  , object: function isObject(val) {
+      return val && typeof val === 'object';
+    }
   , fn: function isFunction(val) {
       return typeof val === 'function';
     }
